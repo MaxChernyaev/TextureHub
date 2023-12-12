@@ -113,10 +113,14 @@ namespace Course_web_project.Controllers
             {
                 CurrentTexture = JsonSerializer.Deserialize<Textures>(currentTextureJson);
                 CurrentUser = JsonSerializer.Deserialize<Users>(currentUserJson);
+
+                Textures localTextures = db.Textures.FirstOrDefault(t => t.ID == CurrentTexture.ID);
+                Users localUsers = db.Users.Include(c => c.Textures).FirstOrDefault(u => u.ID == CurrentUser.ID);
+
                 // ищем в базе избранного эту текстуру у текущего пользователя
                 if (CurrentUser.Textures.Count != 0)
                 {
-                    foreach (var item in CurrentUser.Textures)
+                    foreach (var item in localUsers.Textures)
                     {
                         if (item.ID == CurrentTexture.ID)
                         {
@@ -346,7 +350,12 @@ namespace Course_web_project.Controllers
                     user.Textures.Add(texture);
                     await db.SaveChangesAsync();
                 }
-/*                else
+                // обновим объект CurrentUser в сессии
+                HttpContext.Session.SetString("CurrentUser", Newtonsoft.Json.JsonConvert.SerializeObject(CurrentUser, new Newtonsoft.Json.JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                }));
+                /*else
                 {
                     // если ещё нет, то добавляем
                     user.Textures.Add(texture);
