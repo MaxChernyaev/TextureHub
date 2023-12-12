@@ -1,0 +1,152 @@
+﻿@model SharedModelsForView
+@{
+    ViewData["Title"] = "Текстура";
+}
+
+@* <div class="row">
+    <div class="w-50 mx-auto">
+        <h2>Персональная страничка текстуры</h2>
+    </div>
+</div> *@
+
+<!doctype html>
+<html lang="en">
+<head>
+    
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <div class="w-75 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
+        <div class="col border rounded p-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <figure class="figure">
+                            <img src="~/texture_files/@ViewData["PathToImg"].ToString()" class="figure-img img-fluid rounded" style="width:400px;height:400px;">
+                            <figcaption class="figure-caption">@ViewData["TextureName"]</figcaption>
+                        </figure>
+                        @* <img src="~/texture_files/@ViewData["PathToImg"].ToString()" style="width:400px;height:400px;"> *@
+                    </div>
+                    <div class="col">
+                        <dl class="row">
+                            <div class="form-check form-switch">
+                                @* <form asp-action="AddTextureToFavorite" asp-controller="home" method="post">
+                                    <a asp-area="" asp-controller="home" asp-action="AddTextureToFavorite">
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                    </a>
+                                    <label class="form-check-label" for="flexSwitchCheckDefault"><h4>В избранном</h4></label>
+                                </form> *@
+
+                                <form id="favoriteForm" asp-action="AddTextureToFavorite" asp-controller="home" method="post">
+                                    @if (@ViewData["TextureIsFavored"]?.ToString() == "true")
+                                    {
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" checked disabled>
+                                    }
+                                    else if (@ViewData["TextureIsFavored"]?.ToString() == "false")
+                                    {
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()">
+                                    }
+                                    else if (@ViewData["TextureIsFavored"]?.ToString() == "disabled")
+                                    {
+                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" disabled>
+                                    }
+                                    <label class="form-check-label" for="flexSwitchCheckDefault"><h4>В избранном</h4></label>
+                                </form>
+                            </div>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-2"><h4>Тип:</h4></dt>
+                            <dd class="col-sm-10"><h4>@ViewData["TextureType"]</h4></dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-2"><h4>Рейтинг:</h4></dt>
+                            <dd class="col-sm-10"><h4>@ViewData["TextureRating"] / 5</h4></dd>
+                        </dl>
+@*                         <form asp-action="UpdateRating" asp-controller="home">
+                            <div class="mb-3">
+                                <label asp-for="Rating" class="form-label">Ваша оценка:</label>
+                                <input type="text" asp-for="Rating" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-success">Отправить</button>
+                        </form> *@
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <button type="button" class="btn btn-primary">Download</button>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <h3>Комментарии:</h3>
+            <table class="table">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Пользователь</th>
+                        <th scope="col">Комментарий</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @* <tr>
+                        <th scope="row">1</th>
+                        <td>Max</td>
+                        <td>Мой афигенный комментарий</td>
+                    </tr> *@
+                    @{int row = 0;}
+                    @if(Model.CommentsList != null)
+                    {
+@*                         @{
+                            var db = new ApplicationDBContext(); // создание экземпляра контекста базы данных
+                            var user = db.Users.FirstOrDefault(u => u.ID == Model); // поиск пользователя по ID
+                        } *@
+
+                        @foreach (var comment in Model.CommentsList)
+                        {
+                            row++;
+                            // находим комментарии, принадлежащие этой текстуре
+                            if (comment.TexturesId.ToString() == @ViewData["TextureID"].ToString())
+                            {
+                                <tr>
+                                    <th scope="row">@row</th>
+                                    <td>@comment.Users?.username</td>
+                                    <td>@comment.text_comment</td>
+                                </tr>
+                            }
+                        }
+                    }
+
+
+                </tbody>
+            </table>
+            <p></p>
+            <h3>Добавить новый комментарий:</h3>
+            <div class="form-floating">
+                @if (ViewData["Active_User"].ToString() == "null")
+                {
+                    <textarea class="form-control" placeholder="Leave a comment here" style="height: 100px" disabled></textarea>
+                    <label for="floatingTextarea2">Войдите в аккаунт, чтобы оставить комментарий!</label>
+                }
+                else
+                {
+                    <form asp-action="NewComment" asp-controller="home" method="post">
+                        <textarea type="text" asp-for="Comments.text_comment" class="form-control" placeholder="@ViewData["Active_User"].ToString(), как тебе текстура?" style="height: 50px"></textarea>
+                        @* <label for="floatingTextarea2">@ViewData["Active_User"].ToString(), как тебе текстура?</label> *@
+                        @* <input type="text" asp-for="text_comment" class="form-control">
+                        <input type="number" asp-for="ID" class="form-control" /> *@
+                        <p></p>
+                        <a asp-area="" asp-controller="home" asp-action="NewComment">
+                            <button type="submit" class="btn btn-primary">Отправить комментарий</button>
+                        </a>
+                    </form>
+                }
+            </div>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            document.getElementById("favoriteForm").submit();
+        }
+    </script>
+</body>
+</html>

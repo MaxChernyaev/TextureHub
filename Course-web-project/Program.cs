@@ -1,7 +1,38 @@
+using Course_web_project;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+var cfg = new ConfigurationBuilder()
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables()
+    .Build();
+
+
+//Регистрируем пользовательские сервисы
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlite(
+builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(opt =>
+    {
+        opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    });
+
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // сделать сеанс обязательным для работы
+});
+
 
 var app = builder.Build();
 
@@ -17,6 +48,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession(); // вызов метода UseSession
 
 app.UseAuthorization();
 

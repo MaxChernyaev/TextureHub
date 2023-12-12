@@ -1,0 +1,85 @@
+﻿@model Textures
+@{
+    ViewData["Title"] = "Добавление текстур";
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    @* <style>
+      .bg-dark-color {
+        background-color: #343a40;
+        color: white; /* Если вы хотите также изменить цвет текста, его можно задать здесь */
+      }
+    </style> *@
+</head>
+@* <body class ="bg-dark-color"> *@
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="row">
+        <div class="w-50 mx-auto">
+            <h2>Добавление новой текстуры на сайт</h2>
+        </div>
+    </div>
+
+    <div class="w-50 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
+        <div class="col border rounded p-5">
+            @{
+                if (ViewData["SelectedValue"].ToString() == "notification_on")
+                {
+                    <div id="top-alert" class="alert alert-success alert-dismissible fade show">
+                        <h4 class="alert-heading">Текстура успешно добавлена</h4>
+                        Уведомление закроется автоматически
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            setTimeout(() => {
+                                const alert = bootstrap.Alert.getOrCreateInstance('#top-alert');
+                                alert.close();
+                            }, 4000);
+                        });
+                    </script>
+                }
+            }
+
+            <form asp-action="AddNewTexture" asp-controller="home">
+                <div class="mb-3">
+                    <label class="form-label" for="customFile">Выберите файл:</label>
+                    <input type="file" asp-for="texture_name" class="form-control" id="customFile">
+                </div>
+    @*             <div class="form-group">
+                    <label for="exampleFormControlFile1">Выберите файл:</label> <br />
+                    <input type="file" asp-for="texture_name" class="form-control-file" id="exampleFormControlFile1">
+                </div> *@
+            @*     <div class="mb-3">
+                    <label asp-for="texture_name" class="form-label">Имя файла</label>
+                    <input type="text" asp-for="texture_name" class="form-control">
+                </div> *@
+                <br />  
+                <div class="mb-3">
+                    <label asp-for="texture_type" class="form-label">Тип текстуры:</label>
+                    <input type="text" asp-for="texture_type" class="form-control">
+                    <div id="emailHelp" class="form-text">(wood, stone, metall, ground, grass, concrete, cloth, brick, tile, terrazzo)</div>
+                </div>
+                <div class="form-check">
+                    <input asp-for="pbr_or_seamless" class="form-check-input" type="radio" value="Seamless" id="flexCheckDefault" checked>
+                    <label asp-for="pbr_or_seamless" class="form-check-label" for="flexCheckDefault">
+                        Seamless Текстура
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input asp-for="pbr_or_seamless" class="form-check-input" type="radio" value="PBR" id="flexCheckChecked">
+                    <label asp-for="pbr_or_seamless" class="form-check-label" for="flexCheckChecked">
+                        PBR Текстура
+                    </label>
+                </div>
+                <br />
+                @* <input type="hidden" asp-for="texture_name" value="Send" /> *@
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

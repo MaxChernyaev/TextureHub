@@ -1,0 +1,35 @@
+﻿@model Users
+@{
+    ViewData["Title"] = "Регистрация";
+}
+<p></p>
+<p></p>
+<p></p>
+<div class="row">
+    <div class="w-25 mx-auto">
+        <h2>Зарегистрируйтесь!</h2>
+    </div>
+</div>
+
+<form asp-action="Registration" asp-controller="home">
+
+    <div class="w-25 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
+        <div class="col border rounded p-5">
+
+            <div class="mb-3">
+                <label asp-for="username" class="form-label">Никнейм:</label>
+                <input type="text" asp-for="username" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="email" class="form-label">E-mail:</label>
+                <input type="email" asp-for="email" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="password" class="form-label">Пароль:</label>
+                <input type="text" asp-for="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+
+        </div>
+    </div>
+</form>

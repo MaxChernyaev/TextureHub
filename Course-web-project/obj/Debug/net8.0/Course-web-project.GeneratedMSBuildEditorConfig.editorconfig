@@ -18,8 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Max\source\repos\Course-web-project\Course-web-project
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Home/AddNewTexture.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGROZXdUZXh0dXJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Home/PersonalTexturePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJzb25hbFRleHR1cmVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Home/PersonalUserPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZXJzb25hbFVzZXJQYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Home/Privacy.cshtml]
@@ -28,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Shared/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Shared/Registration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Max/source/repos/Course-web-project/Course-web-project/Views/Shared/_ValidationScriptsPartial.cshtml]

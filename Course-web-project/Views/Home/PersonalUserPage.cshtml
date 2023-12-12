@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Личный кабинет";
+}
+
+<div class="row">
+    <div class="w-25 mx-auto">
+        <h2>Личный кабинет</h2>
+    </div>
+</div>
+
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <div class="w-25 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
+        <div class="col border rounded p-5">
+            @{
+                <h4>Вы зашли под именем: @ViewBag.ActiveUser</h4>
+            }
+        </div>
+    </div>
+</body>
+</html>
