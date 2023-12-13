@@ -93,13 +93,6 @@
 @* <body class="bg-dark-color"> *@
 <body>
 
-
-
-
-
-
-
-
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="bootstrap" viewBox="0 0 118 94">
             <title>Bootstrap</title>
@@ -163,7 +156,7 @@
         <header class="p-2 bg-dark text-white">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <a href="/" class="d-flex align-items-start mb-2 mb-lg-0 text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap" /></svg>
                     </a>
 
@@ -176,15 +169,15 @@
                         <li><a href="#" class="link-light px-2 text-white link-underline-opacity-100">About</a></li>
                     </ul>
 
-                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    @* <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                         <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-                    </form>
+                    </form> *@
 
                     <div class="text-end">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">
                                 @* <button type="button" class="btn btn-outline-light me-2">Login</button> *@
                             <button type="button" class="btn btn-warning me-2">
-                                @(@ViewBag.ActiveUser != null ? "Личный кабинет: " + @ViewBag.ActiveUser : "Login")
+                                @(@ViewBag.ActiveUser != null ? "Личный кабинет: " + @ViewBag.ActiveUser : "Авторизация")
                                 </button>
                             </a>
                         @* <button type="button" class="btn btn-warning">Sign-up</button> *@

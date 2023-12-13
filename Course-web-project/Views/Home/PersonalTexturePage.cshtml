@@ -12,7 +12,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    
+
 </head>
 <body>
     <p></p>
@@ -31,25 +31,18 @@
                     <div class="col">
                         <dl class="row">
                             <div class="form-check form-switch">
-                                @* <form asp-action="AddTextureToFavorite" asp-controller="home" method="post">
-                                    <a asp-area="" asp-controller="home" asp-action="AddTextureToFavorite">
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                    </a>
-                                    <label class="form-check-label" for="flexSwitchCheckDefault"><h4>В избранном</h4></label>
-                                </form> *@
-
                                 <form id="favoriteForm" asp-action="AddTextureToFavorite" asp-controller="home" method="post">
                                     @if (@ViewData["TextureIsFavored"]?.ToString() == "true")
                                     {
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" checked disabled>
+                                        <input class="form-check-input btn-lg" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" checked disabled>
                                     }
                                     else if (@ViewData["TextureIsFavored"]?.ToString() == "false")
                                     {
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()">
+                                        <input class="form-check-input btn-lg" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()">
                                     }
                                     else if (@ViewData["TextureIsFavored"]?.ToString() == "disabled")
                                     {
-                                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" disabled>
+                                        <input class="form-check-input btn-lg" type="checkbox" id="flexSwitchCheckDefault" onchange="submitForm()" disabled>
                                     }
                                     <label class="form-check-label" for="flexSwitchCheckDefault"><h4>В избранном</h4></label>
                                 </form>
@@ -60,9 +53,78 @@
                             <dd class="col-sm-10"><h4>@ViewData["TextureType"]</h4></dd>
                         </dl>
                         <dl class="row">
+                            <dt class="col-sm-2"><h4>Вид:</h4></dt>
+                            <dd class="col-sm-10"><h4>@ViewData["TextureSeamlessOrPBR"]</h4></dd>
+                        </dl>
+                        <dl class="row">
                             <dt class="col-sm-2"><h4>Рейтинг:</h4></dt>
                             <dd class="col-sm-10"><h4>@ViewData["TextureRating"] / 5</h4></dd>
                         </dl>
+
+
+
+
+@*                         <dl class="row">
+                            <dt class="col-sm-5"><h4>Ваша оценка:</h4></dt>
+                            <form asp-action="NewComment" asp-controller="home" method="post">
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> *@
+                                    @* <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked> *@
+@*                                         <input type="number" asp-for="Ratings.Rating" type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio1">1</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio2">2</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio3">3</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio4">4</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                                    <label class="btn btn-outline-primary" for="btnradio5">5</label>
+                                </div>
+                            </form>
+                        </dl> *@
+
+
+                        @* <form asp-action="NewRating" asp-controller="home" method="post"> *@
+                            <dl class="row">
+                                <dt class="col-sm-5"><h4>Ваша оценка:</h4></dt>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <form asp-action="NewRating" asp-controller="home" method="post">
+                                        <input type="hidden" asp-for="Ratings.Rating" value="1" class="form-control">
+                                        <input type="submit" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" @(@ViewData["RatingExists"]?.ToString() == "true" ? "disabled" : "")>
+                                        <label class="btn btn-outline-primary" for="btnradio1">1</label>
+                                    </form>
+                                    <form asp-action="NewRating" asp-controller="home" method="post">
+                                        <input type="hidden" asp-for="Ratings.Rating" value="2" class="form-control">
+                                        <input type="submit" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" @(@ViewData["RatingExists"]?.ToString() == "true" ? "disabled" : "")>
+                                        <label class="btn btn-outline-primary" for="btnradio2" onclick="sendRating(2)">2</label>
+                                    </form>
+                                    <form asp-action="NewRating" asp-controller="home" method="post">
+                                        <input type="hidden" asp-for="Ratings.Rating" value="3" class="form-control">
+                                        <input type="submit" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" @(@ViewData["RatingExists"]?.ToString() == "true" ? "disabled" : "")>
+                                        <label class="btn btn-outline-primary" for="btnradio3" onclick="sendRating(3)">3</label>
+                                    </form>
+                                    <form asp-action="NewRating" asp-controller="home" method="post">
+                                        <input type="hidden" asp-for="Ratings.Rating" value="4" class="form-control">
+                                        <input type="submit" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" @(@ViewData["RatingExists"]?.ToString() == "true" ? "disabled" : "")>
+                                        <label class="btn btn-outline-primary" for="btnradio4" onclick="sendRating(4)">4</label>
+                                    </form>
+                                    <form asp-action="NewRating" asp-controller="home" method="post">
+                                        <input type="hidden" asp-for="Ratings.Rating" value="5" class="form-control">
+                                        <input type="submit" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" @(@ViewData["RatingExists"]?.ToString() == "true" ? "disabled" : "")>
+                                        <label class="btn btn-outline-primary" for="btnradio5" onclick="sendRating(5)">5</label>
+                                    </form>
+                                </div>
+                            </dl>
+                            <input type="hidden" id="selectedRating" name="selectedRating" />
+                        @* </form> *@
+
+
+
+
 @*                         <form asp-action="UpdateRating" asp-controller="home">
                             <div class="mb-3">
                                 <label asp-for="Rating" class="form-label">Ваша оценка:</label>
@@ -70,10 +132,25 @@
                             </div>
                             <button type="submit" class="btn btn-success">Отправить</button>
                         </form> *@
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                        <button type="button" class="btn btn-primary">Download</button>
+                        <br />
+                        
+                        @{string newPath = "";}
+                        @if (@ViewData["TextureSeamlessOrPBR"].ToString() == "PBR")
+                        {
+                            int dotPosition = @ViewData["PathToImg"].ToString().LastIndexOf('.'); // нахожу позицию последней точки в имени
+                            newPath = @ViewData["PathToImg"].ToString().Substring(0, dotPosition); // обрезаю
+                            newPath = newPath + ".zip";
+                            <a href="../../texture_files/@newPath" download="@newPath">
+                                <button type="button" class="btn btn-success btn-lg">Скачать архив с PBR текстурой бесплатно</button>
+                            </a>
+                        }
+                        else if (@ViewData["TextureSeamlessOrPBR"].ToString() == "Seamless")
+                        {
+                            newPath = @ViewData["PathToImg"].ToString();
+                            <a href="../../texture_files/@newPath" download="@newPath">
+                                <button type="button" class="btn btn-success btn-lg">Скачать текстуру бесплатно без смс и регистрации</button>
+                            </a>
+                        }
                     </div>
                 </div>
             </div>
@@ -103,10 +180,10 @@
 
                         @foreach (var comment in Model.CommentsList)
                         {
-                            row++;
                             // находим комментарии, принадлежащие этой текстуре
                             if (comment.TexturesId.ToString() == @ViewData["TextureID"].ToString())
                             {
+                                row++;
                                 <tr>
                                     <th scope="row">@row</th>
                                     <td>@comment.Users?.username</td>
@@ -114,8 +191,8 @@
                                 </tr>
                             }
                         }
-                    }
 
+                    }
 
                 </tbody>
             </table>
@@ -146,6 +223,12 @@
     <script>
         function submitForm() {
             document.getElementById("favoriteForm").submit();
+        }
+    </script>
+    <script>
+        function sendRating(rating) {
+            document.getElementById("selectedRating").value = rating;
+            document.querySelector('form').submit(); // отправляем форму при выборе оценки
         }
     </script>
 </body>

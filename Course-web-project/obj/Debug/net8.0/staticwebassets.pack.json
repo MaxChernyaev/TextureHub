@@ -245,6 +245,206 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks023.png",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks023.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks023.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks023.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks051.png",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks051.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks051.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks051.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks053.png",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks053.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks053.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks053.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks085.png",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks085.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks085.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks085.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks090.png",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks090.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks090.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Bricks090.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Carpet015.png",
+      "PackagePath": "staticwebassets\\texture_files\\Carpet015.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Carpet015.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Carpet015.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Carpet016.png",
+      "PackagePath": "staticwebassets\\texture_files\\Carpet016.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Carpet016.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Carpet016.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric061.png",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric061.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric061.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric061.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric069.png",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric069.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric069.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric069.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric079.png",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric079.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Fabric079.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Fabric079.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass001.png",
+      "PackagePath": "staticwebassets\\texture_files\\Grass001.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass001.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Grass001.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass002.png",
+      "PackagePath": "staticwebassets\\texture_files\\Grass002.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass002.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Grass002.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass003.png",
+      "PackagePath": "staticwebassets\\texture_files\\Grass003.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass003.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Grass003.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass004.png",
+      "PackagePath": "staticwebassets\\texture_files\\Grass004.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Grass004.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Grass004.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Gravel023.png",
+      "PackagePath": "staticwebassets\\texture_files\\Gravel023.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Gravel023.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Gravel023.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Ground037.png",
+      "PackagePath": "staticwebassets\\texture_files\\Ground037.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Ground037.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Ground037.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Planks039.png",
+      "PackagePath": "staticwebassets\\texture_files\\Planks039.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Planks039.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Planks039.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rock035.png",
+      "PackagePath": "staticwebassets\\texture_files\\Rock035.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rock035.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Rock035.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rock051.png",
+      "PackagePath": "staticwebassets\\texture_files\\Rock051.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rock051.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Rock051.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rocks025.png",
+      "PackagePath": "staticwebassets\\texture_files\\Rocks025.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Rocks025.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Rocks025.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Tiles130.png",
+      "PackagePath": "staticwebassets\\texture_files\\Tiles130.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Tiles130.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Tiles130.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood051.png",
+      "PackagePath": "staticwebassets\\texture_files\\Wood051.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood051.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Wood051.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood066.png",
+      "PackagePath": "staticwebassets\\texture_files\\Wood066.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood066.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Wood066.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood090A.png",
+      "PackagePath": "staticwebassets\\texture_files\\Wood090A.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Wood090A.zip",
+      "PackagePath": "staticwebassets\\texture_files\\Wood090A.zip"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\WoodFloor051.png",
+      "PackagePath": "staticwebassets\\texture_files\\WoodFloor051.png"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\WoodFloor051.zip",
+      "PackagePath": "staticwebassets\\texture_files\\WoodFloor051.zip"
+    },
+    {
       "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\aluminium-2998-mm-architextures (1).jpg",
       "PackagePath": "staticwebassets\\texture_files\\aluminium-2998-mm-architextures (1).jpg"
     },
@@ -691,6 +891,10 @@
     {
       "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\zinc-1498-mm-architextures.jpg",
       "PackagePath": "staticwebassets\\texture_files\\zinc-1498-mm-architextures.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\user_account.jpg",
+      "PackagePath": "staticwebassets\\user_account.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Course-web-project.Microsoft.AspNetCore.StaticWebAssets.props",

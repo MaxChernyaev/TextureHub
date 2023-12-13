@@ -54,7 +54,14 @@ namespace Course_web_project.Controllers
         public IActionResult PersonalUserPage()
         {
             // помещаю имя пользователя во ViewBag для доступа на странице _Layout.cshtml
-            ViewBag.ActiveUser = HttpContext.Session.GetString("Active_User");
+            //ViewBag.ActiveUser = HttpContext.Session.GetString("Active_User");
+            var currentUserJson = HttpContext.Session.GetString("CurrentUser");
+            CurrentUser = JsonSerializer.Deserialize<Users>(currentUserJson);
+            ViewData["UserName"] = CurrentUser.username;
+            ViewData["UserEmail"] = CurrentUser.email;
+            ViewData["UserFavorites"] = CurrentUser.Textures.Count;
+            //sharedmodels.Comments.Users = db.Users.FirstOrDefault(u => u.ID == CurrentUser.ID);
+            
             return View();
         }
 
@@ -76,22 +83,41 @@ namespace Course_web_project.Controllers
                 ViewData["PathToImg"] = value;
             }
 
-            // при начале работы с текстурой, запомню её как текущую для использования в других методах
-            // приходится сериализовать объект в json для хранения
-            HttpContext.Session.SetString("CurrentTexture", JsonSerializer.Serialize(CurrentTexture));
-
-            ViewData["TextureID"] = CurrentTexture.ID;
-            ViewData["TextureName"] = CurrentTexture.texture_name;
-            ViewData["TextureType"] = CurrentTexture.texture_type;
-            //var foundRating = db.Ratings.Where(u => u.Textures.ID == CurrentTexture.ID).FirstOrDefault();
-            if (CurrentTexture.Ratings != null)
+            Ratings localRating = db.Ratings.FirstOrDefault(r => r.TexturesId == CurrentTexture.ID);
+            if(localRating != null)
             {
-                ViewData["TextureRating"] = CurrentTexture.Ratings.Rating;
+                ViewData["TextureRating"] = localRating.Rating;
+                // пока так - если кто-то поставил текстуре рейтинг, то отключаем кнопки, больше его менять нельзя (надо будет исправить)
+                ViewData["RatingExists"] = "true";
             }
             else
             {
                 ViewData["TextureRating"] = "-";
             }
+
+            // при начале работы с текстурой, запомню её как текущую для использования в других методах
+            // приходится сериализовать объект в json для хранения
+            // чтобы избежать циклического обращения:
+            //HttpContext.Session.SetString("CurrentTexture", JsonSerializer.Serialize(CurrentTexture));
+            HttpContext.Session.SetString("CurrentTexture", Newtonsoft.Json.JsonConvert.SerializeObject(CurrentTexture, new Newtonsoft.Json.JsonSerializerSettings()
+            {
+                ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            }));
+
+            ViewData["TextureID"] = CurrentTexture.ID;
+            ViewData["TextureName"] = CurrentTexture.texture_name;
+            ViewData["TextureType"] = CurrentTexture.texture_type;
+            /*Textures localTextures = db.Textures.FirstOrDefault(t => t.ID == CurrentTexture.ID);*/
+            ViewData["TextureSeamlessOrPBR"] = CurrentTexture.pbr_or_seamless;
+            //var foundRating = db.Ratings.Where(u => u.Textures.ID == CurrentTexture.ID).FirstOrDefault();
+            /*            if (CurrentTexture.Ratings != null)
+                        {
+                            ViewData["TextureRating"] = CurrentTexture.Ratings.Rating;
+                        }
+                        else
+                        {
+                            ViewData["TextureRating"] = "-";
+                        }*/
 
             if (HttpContext.Session.GetString("Active_User") != null)
             {
@@ -114,7 +140,6 @@ namespace Course_web_project.Controllers
                 CurrentTexture = JsonSerializer.Deserialize<Textures>(currentTextureJson);
                 CurrentUser = JsonSerializer.Deserialize<Users>(currentUserJson);
 
-                Textures localTextures = db.Textures.FirstOrDefault(t => t.ID == CurrentTexture.ID);
                 Users localUsers = db.Users.Include(c => c.Textures).FirstOrDefault(u => u.ID == CurrentUser.ID);
 
                 // ищем в базе избранного эту текстуру у текущего пользователя
@@ -140,6 +165,7 @@ namespace Course_web_project.Controllers
             }
             else
             {
+                ViewData["RatingExists"] = "true";
                 ViewData["TextureIsFavored"] = "disabled";
             }
 
@@ -301,6 +327,25 @@ namespace Course_web_project.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> NewRating(SharedModelsForView sharedmodels)
+        {
+            var currentTextureJson = HttpContext.Session.GetString("CurrentTexture");
+            var currentUserJson = HttpContext.Session.GetString("CurrentUser");
+
+            if (!string.IsNullOrEmpty(currentTextureJson) && !string.IsNullOrEmpty(currentUserJson))
+            {
+                CurrentTexture = JsonSerializer.Deserialize<Textures>(currentTextureJson);
+                sharedmodels.Ratings.Textures = db.Textures.FirstOrDefault(t => t.ID == CurrentTexture.ID);
+            }
+
+
+            // добавление нового рейтинга в БД
+            db.Ratings.Add(sharedmodels.Ratings);
+            await db.SaveChangesAsync();
+            return RedirectToAction("PersonalTexturePage");
+        }
+
+        [HttpPost]
         public async Task<IActionResult> AddTextureToFavorite()
         {
             var currentTextureJson = HttpContext.Session.GetString("CurrentTexture");
@@ -369,8 +414,7 @@ namespace Course_web_project.Controllers
             return RedirectToAction("PersonalTexturePage");
         }
 
-
-            public IActionResult Privacy()
+        public IActionResult Privacy()
         {
             // помещаю имя пользователя во ViewBag для доступа на странице _Layout.cshtml
             ViewBag.ActiveUser = HttpContext.Session.GetString("Active_User");

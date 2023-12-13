@@ -1,10 +1,13 @@
-﻿@{
+﻿@model Users
+@{
     ViewData["Title"] = "Личный кабинет";
 }
 
 <div class="row">
-    <div class="w-25 mx-auto">
+    <div class="w-50 mx-auto">
+        <br />
         <h2>Личный кабинет</h2>
+        <br />
     </div>
 </div>
 
@@ -14,12 +17,58 @@
 
 </head>
 <body>
-    <div class="w-25 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
-        <div class="col border rounded p-5">
+    <div class="w-50 container-fluid d-flex h-100 justify-content-center align-items-center p-1">
+        <div class="col-8">
+            <img class="fit-picture" src="~/user_account.jpg" alt="User Photo" />
+        </div>
+        <div class="col-4 align-self-start">
             @{
-                <h4>Вы зашли под именем: @ViewBag.ActiveUser</h4>
+                <p>
+                    <h5><strong>Вы зашли под именем:</strong></h5>
+                    @ViewData["UserName"]
+                </p>
+
+                <p>
+                    <h5><strong>Почта:</strong></h5>
+                    @ViewData["UserEmail"]
+                </p>
+                <p>
+                    <h5><strong>Текстур в избранном:</strong></h5>
+                    @ViewData["UserFavorites"]
+                </p>
             }
         </div>
+        <br />
+        @* @foreach (var item in Model.Textures)
+        {
+            <div class="col">
+                <a class='btn btn-link' asp-area="" asp-controller="Home" asp-action="PersonalTexturePage" asp-route-value="@item.texture_name">
+                    <img src="texture_files/@item.texture_name" style="width:200px;height:200px;">
+                </a>
+            </div>
+        } *@
+
+        @*         @for (var i = 0; i < shuffledModel.Count; i++)
+        {
+            var item = shuffledModel[i];
+            if ((item.texture_type == ViewData["SelectedValue"].ToString() && item.pbr_or_seamless == "Seamless") || ViewData["SelectedValue"].ToString() == "all")
+            {
+                <div class="col">
+                    <a class='btn btn-link' asp-area="" asp-controller="Home" asp-action="PersonalTexturePage" asp-route-value="@item.texture_name">
+                        <img src="texture_files/@item.texture_name" style="width:200px;height:200px;">
+                    </a>
+                </div>
+            }
+            else if ((ViewData["SelectedValue"].ToString() == "PBR" && item.pbr_or_seamless == "PBR"))
+            {
+                <div class="col">
+                    <a class='btn btn-link' asp-area="" asp-controller="Home" asp-action="PersonalTexturePage" asp-route-value="@item.texture_name">
+                        <img src="texture_files/@item.texture_name" style="width:200px;height:200px;">
+                    </a>
+                </div>
+            }
+        } *@
+
     </div>
 </body>
 </html>
