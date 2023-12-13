@@ -71,7 +71,8 @@ namespace Course_web_project.Controllers
             ViewData["UserEmail"] = CurrentUser.email;
             ViewData["UserFavorites"] = CurrentUser.Textures.Count;
             //sharedmodels.Comments.Users = db.Users.FirstOrDefault(u => u.ID == CurrentUser.ID);
-            
+            // помещаю имя пользователя во ViewBag для доступа на странице _Layout.cshtml
+            ViewBag.ActiveUser = HttpContext.Session.GetString("Active_User");
             return View();
         }
 
@@ -153,7 +154,7 @@ namespace Course_web_project.Controllers
                 Users localUsers = db.Users.Include(c => c.Textures).FirstOrDefault(u => u.ID == CurrentUser.ID);
 
                 // ищем в базе избранного эту текстуру у текущего пользователя
-                if (CurrentUser.Textures.Count != 0)
+                if (localUsers.Textures.Count != 0)
                 {
                     foreach (var item in localUsers.Textures)
                     {
