@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Course-web-project.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\Jolly_Roger.gif",
+      "PackagePath": "staticwebassets\\Jolly_Roger.gif"
+    },
+    {
       "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -243,6 +247,10 @@
     {
       "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\logo_white.png",
+      "PackagePath": "staticwebassets\\logo_white.png"
     },
     {
       "Id": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\Bricks023.png",

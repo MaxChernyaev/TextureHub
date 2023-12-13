@@ -129,3 +129,4 @@ C:\Users\Max\source\repos\Course-web-project\Course-web-project\bin\Debug\net8.0
 C:\Users\Max\source\repos\Course-web-project\Course-web-project\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Max\source\repos\Course-web-project\Course-web-project\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Max\source\repos\Course-web-project\Course-web-project\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\Max\source\repos\Course-web-project\Course-web-project\obj\Debug\net8.0\Course-web-project.sourcelink.json

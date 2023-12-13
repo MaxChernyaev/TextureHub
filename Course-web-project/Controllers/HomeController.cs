@@ -51,6 +51,16 @@ namespace Course_web_project.Controllers
             }
         }
 
+        public IActionResult Pricing()
+        {
+            return View();
+        }
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult PersonalUserPage()
         {
             // помещаю имя пользователя во ViewBag для доступа на странице _Layout.cshtml

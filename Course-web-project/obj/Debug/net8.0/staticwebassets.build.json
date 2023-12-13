@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k6M8xlLNfKN/DgZyE1AsfglkOXCJDMzEgbmVNdNennM=",
+  "Hash": "oOG+m+er/jDSvC/Ko/o0+KgM1i913IMfGZeN2qPqmbA=",
   "Source": "Course-web-project",
   "BasePath": "_content/Course-web-project",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\Jolly_Roger.gif",
+      "SourceId": "Course-web-project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\",
+      "BasePath": "_content/Course-web-project",
+      "RelativePath": "Jolly_Roger.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Jolly_Roger.gif"
     },
     {
       "Identity": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\js\\site.js",
@@ -1193,6 +1212,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\logo_white.png",
+      "SourceId": "Course-web-project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\",
+      "BasePath": "_content/Course-web-project",
+      "RelativePath": "logo_white.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\logo_white.png"
     },
     {
       "Identity": "C:\\Users\\Max\\source\\repos\\Course-web-project\\Course-web-project\\wwwroot\\texture_files\\aluminium-2998-mm-architextures (1).jpg",
